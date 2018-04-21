@@ -1,10 +1,14 @@
 # Simple Enigma
 # Author: Cameron Stewart
 # This is a simple simulation of the enigma machine. No plug board functionality at this stage.
+# Licence: MIT
 """The Enigma is an electro mechanical typewriter that was essentially a simple circuit that connected a battery
 to 26 lamps, each lamp representing a letter of the alphabet. In between the lamp was a series of 3 rotors with
 a reflector the opposite end of the battery and lamp. The rotors each had a specific wiring between the inputs and
 output. In order to scramble the message, the rotors changed positions at different speeds."""
+
+# TODO Plugboard function, prior to enciphering the selected letter is swapped for its pair and this repeats afterwards
+# This plugboard is what gave the ENIGMA most of its key space
 
 # This section contains the wiring of the rotors and the fixed reflector.
 # Currently, the rotors are fixed from left to right as rotors I,II,III
@@ -16,7 +20,7 @@ rotor_III = [1, 3, 5, 7, 9, 11, 2, 15, 17, 19, 23, 21, 25, 13, 24, 4, 8, 22, 6, 
 rotor_IV = []
 rotor_V = []
 reflector_b = [24, 17, 20, 7, 16, 18, 11, 3, 15, 23, 13, 6, 14, 10, 12, 8, 4, 1, 5, 25, 2, 22, 21, 9, 0, 19]
-
+# TODO add in Rotors IV, V
 
 # this  sets the rotors to their starting positions
 def start_pos(left, middle, right):
@@ -40,10 +44,7 @@ def input_check(input_value):
             input_value = input_value.upper()
     return input_value
 
-# As enigma increments the rotor before enciphering, the rotor is incremented. This is done by shifting the list left.
-
-
-# note, the other rotors aren't incremented  over (see below for a test of this behaviour)
+# As enigma increments the rotor before enciphering, the rotor is incremented. This is done by shifting each list left.
 def stepping(left_pos, middle_pos, right_pos,):
     if middle_pos == middle_kick:
         rotor_L.append(rotor_L[0])
