@@ -2,10 +2,6 @@
 # Author: Cameron Stewart
 # This is a simple simulation of the enigma machine. No plug board functionality at this stage.
 # Licence: MIT
-"""The Enigma is an electro mechanical typewriter that was essentially a simple circuit that connected a battery
-to 26 lamps, each lamp representing a letter of the alphabet. In between the lamp was a series of 3 rotors with
-a reflector the opposite end of the battery and lamp. The rotors each had a specific wiring between the inputs and
-output. In order to scramble the message, the rotors changed positions at different speeds."""
 
 # TODO Plugboard function, prior to enciphering the selected letter is swapped for its pair and this repeats afterwards
 # This plugboard is what gave the ENIGMA most of its key space
